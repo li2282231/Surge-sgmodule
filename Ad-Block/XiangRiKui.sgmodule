@@ -1,6 +1,6 @@
 #!name=向日葵开屏去广告
 #!desc=移除向日葵 iOS 冷启动、热启动开屏广告，并兼容旧版开屏入口。根据向日葵 15.5.8 / Surge 5.20.0 模块由ChatGPT修复。
-#!author=可莉（原模块） / ChatGPT（5.6 Sol修复）
+#!author=可莉（原模块） / ChatGPT（5.6 Sol）
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OraySunlogin.png
 #!category=去广告
 #!openUrl=https://apps.apple.com/app/id551941458
