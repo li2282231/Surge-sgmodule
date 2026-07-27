@@ -1,0 +1,17 @@
+#!name=向日葵开屏去广告
+#!desc=移除向日葵 iOS 冷启动、热启动开屏广告，并兼容旧版开屏入口。根据向日葵 15.5.8 / Surge 5.20.0 实际 HAR 修复。
+#!author=可莉（原模块） / ChatGPT（5.6 Sol修复）
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OraySunlogin.png
+#!category=去广告
+#!openUrl=https://apps.apple.com/app/id551941458
+#!date=2026-07-27
+
+[Map Local]
+# 新版冷启动入口、备用入口及热启动插屏；返回接口原生采用的空 campaigns 结构。
+^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_[Ii][Oo][Ss]_(?:STARTUP(?:_ADV)?|HOTSTARTUP_INSERT)(?:\?.*)?$ data-type=base64 data="eyJjYW1wYWlnbnMiOltdfQ==" status-code=200 header="Content-Type:application/json; charset=utf-8|Cache-Control:no-store"
+
+# 保留原模块的旧版开屏入口兼容。
+^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_[Ii][Oo][Ss]_DEVICE_FREE(?:\?.*)?$ data-type=base64 data="eyJjYW1wYWlnbnMiOltdfQ==" status-code=200 header="Content-Type:application/json; charset=utf-8|Cache-Control:no-store"
+
+[MITM]
+hostname = %APPEND% client-api-v2.oray.com
