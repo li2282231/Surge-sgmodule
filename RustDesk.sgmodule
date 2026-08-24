@@ -1,0 +1,8 @@
+#!name=RustDesk 局域网直连
+#!desc=让 RustDesk 服务器及 192.168.50.0/24 局域网绕过 Surge 系统代理与增强模式
+#!system=mac
+
+[General]
+always-real-ip = %APPEND% rustdesk.443495.xyz
+tun-excluded-routes = %APPEND% 45.145.74.157/32, 192.168.50.0/24
+skip-proxy = %APPEND% rustdesk.443495.xyz, 45.145.74.157, 192.168.50.0/24
